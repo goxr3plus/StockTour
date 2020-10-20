@@ -1,8 +1,7 @@
 import * as ActionTypes from './actions';
 
 const initialState = {
-  a: 'data',
-
+  nio: '15',
 };
 
 

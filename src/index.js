@@ -14,7 +14,7 @@ ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter basename={getBasename()}>
       <App />
-      {/*<ReduxToastr timeOut={4000} newestOnTop={false} position="top-left" progressBar closeOnToastrClick />*/}
+      <ReduxToastr timeOut={4000} newestOnTop={false} position="top-left" progressBar closeOnToastrClick />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root'),
