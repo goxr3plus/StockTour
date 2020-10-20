@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "NONE",
   "private": true,
-  "homepage": "https://todo.com",
+  "homepage": "https://github.com/goxr3plus/StockTour",
   "dependencies": {
     "bootstrap": "4.5.3",
     "chart.js": "2.9.4",
@@ -16,7 +16,6 @@
     "react-component-queries": "^2.3.0",
     "react-d3-map": "^0.8.3",
     "react-dom": "^16.14.0",
-    "react-ga": "^2.5.7",
     "react-icons": "^3.11.0",
     "react-infinite-calendar": "^2.3.1",
     "react-notification-system": "^0.2.17",
