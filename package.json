@@ -1,7 +1,8 @@
 {
-  "name": "react-reduction",
+  "name": "stocktour",
   "version": "1.0.0",
-  "private": false,
+  "license": "NONE",
+  "private": true,
   "homepage": "https://todo.com",
   "dependencies": {
     "bootstrap": "4.5.3",

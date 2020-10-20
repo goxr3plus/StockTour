@@ -225,127 +225,127 @@ class DashboardPage extends React.Component {
           </Col>
         </Row>
 
-        <Row>
-          <Col lg={4} md={4} sm={12} xs={12}>
-            <Card>
-              <Line
-                data={getStackLineChart({
-                  labels: [
-                    'January',
-                    'February',
-                    'March',
-                    'April',
-                    'May',
-                    'June',
-                    'July',
-                  ],
-                  data: [0, 13000, 5000, 24000, 16000, 25000, 10000],
-                })}
-                options={stackLineChartOptions}
-              />
-              <CardBody
-                className="text-primary"
-                style={{ position: 'absolute' }}
-              >
-                <CardTitle>
-                  <MdInsertChart /> Sales
-                </CardTitle>
-              </CardBody>
-            </Card>
-          </Col>
+        {/*<Row>*/}
+        {/*  <Col lg={4} md={4} sm={12} xs={12}>*/}
+        {/*    <Card>*/}
+        {/*      <Line*/}
+        {/*        data={getStackLineChart({*/}
+        {/*          labels: [*/}
+        {/*            'January',*/}
+        {/*            'February',*/}
+        {/*            'March',*/}
+        {/*            'April',*/}
+        {/*            'May',*/}
+        {/*            'June',*/}
+        {/*            'July',*/}
+        {/*          ],*/}
+        {/*          data: [0, 13000, 5000, 24000, 16000, 25000, 10000],*/}
+        {/*        })}*/}
+        {/*        options={stackLineChartOptions}*/}
+        {/*      />*/}
+        {/*      <CardBody*/}
+        {/*        className="text-primary"*/}
+        {/*        style={{ position: 'absolute' }}*/}
+        {/*      >*/}
+        {/*        <CardTitle>*/}
+        {/*          <MdInsertChart /> Sales*/}
+        {/*        </CardTitle>*/}
+        {/*      </CardBody>*/}
+        {/*    </Card>*/}
+        {/*  </Col>*/}
 
-          <Col lg={4} md={4} sm={12} xs={12}>
-            <Card>
-              <Line
-                data={getStackLineChart({
-                  labels: [
-                    'January',
-                    'February',
-                    'March',
-                    'April',
-                    'May',
-                    'June',
-                    'July',
-                  ],
-                  data: [10000, 15000, 5000, 10000, 5000, 10000, 10000],
-                })}
-                options={stackLineChartOptions}
-              />
-              <CardBody
-                className="text-primary"
-                style={{ position: 'absolute' }}
-              >
-                <CardTitle>
-                  <MdInsertChart /> Revenue
-                </CardTitle>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col lg={4} md={4} sm={12} xs={12}>
-            <Card>
-              <Line
-                data={getStackLineChart({
-                  labels: [
-                    'January',
-                    'February',
-                    'March',
-                    'April',
-                    'May',
-                    'June',
-                    'July',
-                  ],
-                  data: [0, 13000, 5000, 24000, 16000, 25000, 10000].reverse(),
-                })}
-                options={stackLineChartOptions}
-              />
-              <CardBody
-                className="text-primary"
-                style={{ position: 'absolute', right: 0 }}
-              >
-                <CardTitle>
-                  <MdInsertChart /> Profit
-                </CardTitle>
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+        {/*  <Col lg={4} md={4} sm={12} xs={12}>*/}
+        {/*    <Card>*/}
+        {/*      <Line*/}
+        {/*        data={getStackLineChart({*/}
+        {/*          labels: [*/}
+        {/*            'January',*/}
+        {/*            'February',*/}
+        {/*            'March',*/}
+        {/*            'April',*/}
+        {/*            'May',*/}
+        {/*            'June',*/}
+        {/*            'July',*/}
+        {/*          ],*/}
+        {/*          data: [10000, 15000, 5000, 10000, 5000, 10000, 10000],*/}
+        {/*        })}*/}
+        {/*        options={stackLineChartOptions}*/}
+        {/*      />*/}
+        {/*      <CardBody*/}
+        {/*        className="text-primary"*/}
+        {/*        style={{ position: 'absolute' }}*/}
+        {/*      >*/}
+        {/*        <CardTitle>*/}
+        {/*          <MdInsertChart /> Revenue*/}
+        {/*        </CardTitle>*/}
+        {/*      </CardBody>*/}
+        {/*    </Card>*/}
+        {/*  </Col>*/}
+        {/*  <Col lg={4} md={4} sm={12} xs={12}>*/}
+        {/*    <Card>*/}
+        {/*      <Line*/}
+        {/*        data={getStackLineChart({*/}
+        {/*          labels: [*/}
+        {/*            'January',*/}
+        {/*            'February',*/}
+        {/*            'March',*/}
+        {/*            'April',*/}
+        {/*            'May',*/}
+        {/*            'June',*/}
+        {/*            'July',*/}
+        {/*          ],*/}
+        {/*          data: [0, 13000, 5000, 24000, 16000, 25000, 10000].reverse(),*/}
+        {/*        })}*/}
+        {/*        options={stackLineChartOptions}*/}
+        {/*      />*/}
+        {/*      <CardBody*/}
+        {/*        className="text-primary"*/}
+        {/*        style={{ position: 'absolute', right: 0 }}*/}
+        {/*      >*/}
+        {/*        <CardTitle>*/}
+        {/*          <MdInsertChart /> Profit*/}
+        {/*        </CardTitle>*/}
+        {/*      </CardBody>*/}
+        {/*    </Card>*/}
+        {/*  </Col>*/}
+        {/*</Row>*/}
 
-        <Row>
-          <Col lg="4" md="12" sm="12" xs="12">
-            <InfiniteCalendar
-              selected={today}
-              minDate={lastWeek}
-              width="100%"
-              theme={{
-                accentColor: primaryColor,
-                floatingNav: {
-                  background: secondaryColor,
-                  chevron: primaryColor,
-                  color: '#FFF',
-                },
-                headerColor: primaryColor,
-                selectionColor: secondaryColor,
-                textColor: {
-                  active: '#FFF',
-                  default: '#333',
-                },
-                todayColor: secondaryColor,
-                weekdayColor: primaryColor,
-              }}
-            />
-          </Col>
+        {/*<Row>*/}
+        {/*  <Col lg="4" md="12" sm="12" xs="12">*/}
+        {/*    <InfiniteCalendar*/}
+        {/*      selected={today}*/}
+        {/*      minDate={lastWeek}*/}
+        {/*      width="100%"*/}
+        {/*      theme={{*/}
+        {/*        accentColor: primaryColor,*/}
+        {/*        floatingNav: {*/}
+        {/*          background: secondaryColor,*/}
+        {/*          chevron: primaryColor,*/}
+        {/*          color: '#FFF',*/}
+        {/*        },*/}
+        {/*        headerColor: primaryColor,*/}
+        {/*        selectionColor: secondaryColor,*/}
+        {/*        textColor: {*/}
+        {/*          active: '#FFF',*/}
+        {/*          default: '#333',*/}
+        {/*        },*/}
+        {/*        todayColor: secondaryColor,*/}
+        {/*        weekdayColor: primaryColor,*/}
+        {/*      }}*/}
+        {/*    />*/}
+        {/*  </Col>*/}
 
-          <Col lg="8" md="12" sm="12" xs="12">
-            <Card inverse className="bg-gradient-primary">
-              <CardHeader className="bg-gradient-primary">
-                Map with bubbles
-              </CardHeader>
-              <CardBody>
-                <MapWithBubbles />
-              </CardBody>
-            </Card>
-          </Col>
-        </Row>
+        {/*  <Col lg="8" md="12" sm="12" xs="12">*/}
+        {/*    <Card inverse className="bg-gradient-primary">*/}
+        {/*      <CardHeader className="bg-gradient-primary">*/}
+        {/*        Map with bubbles*/}
+        {/*      </CardHeader>*/}
+        {/*      <CardBody>*/}
+        {/*        <MapWithBubbles />*/}
+        {/*      </CardBody>*/}
+        {/*    </Card>*/}
+        {/*  </Col>*/}
+        {/*</Row>*/}
 
         <CardDeck style={{ marginBottom: '1rem' }}>
           <Card body style={{ overflowX: 'auto','paddingBottom':'15px','height': 'fit-content','paddingTop': 'inherit'}}>

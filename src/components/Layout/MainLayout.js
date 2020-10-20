@@ -29,11 +29,11 @@ class MainLayout extends React.Component {
         return;
       }
 
-      this.notificationSystem.addNotification({
-        title: <MdImportantDevices />,
-        message: 'Welome to Reduction Admin!',
-        level: 'info',
-      });
+      // this.notificationSystem.addNotification({
+      //   title: <MdImportantDevices />,
+      //   message: 'Welome to Reduction Admin!',
+      //   level: 'info',
+      // });
     }, 1500);
 
     setTimeout(() => {
@@ -41,12 +41,12 @@ class MainLayout extends React.Component {
         return;
       }
 
-      this.notificationSystem.addNotification({
-        title: <MdLoyalty />,
-        message:
-          'Reduction is carefully designed template powered by React and Bootstrap4!',
-        level: 'info',
-      });
+      // this.notificationSystem.addNotification({
+      //   title: <MdLoyalty />,
+      //   message:
+      //     'Reduction is carefully designed template powered by React and Bootstrap4!',
+      //   level: 'info',
+      // });
     }, 2500);
   }
 
