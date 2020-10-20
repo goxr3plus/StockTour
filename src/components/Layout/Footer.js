@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { Navbar, Nav, NavItem } from 'reactstrap';
-
-import SourceLink from 'components/SourceLink';
+import { Nav, Navbar, NavItem } from 'reactstrap';
 
 const Footer = () => {
   return (
     <Navbar>
       <Nav navbar>
         <NavItem>
-          2018 Reduction theme, source on <SourceLink>Github</SourceLink>
+          {/*2018 Reduction theme, source on <SourceLink>Github</SourceLink>*/}
+          &copy; Copyright {new Date().getFullYear()} <a href={''} target="_blank">GOXR3PLUS STUDIO</a>
         </NavItem>
       </Nav>
     </Navbar>
