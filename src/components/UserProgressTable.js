@@ -5,7 +5,7 @@ import { Table, Progress } from 'reactstrap';
 
 import Avatar from 'components/Avatar';
 
-import withBadge from 'hocs/withBadge';
+import withBadge from 'components/withBadge';
 
 const AvatarWithBadge = withBadge({
   position: 'bottom-right',

@@ -5,8 +5,8 @@ import bg3Image from 'assets/img/bg/background_640-3.jpg';
 import user1Image from 'assets/img/users/100_1.jpg';
 import { UserCard } from 'components/Card';
 import Page from 'components/Page';
-import { bgCards, gradientCards, overlayCards } from 'demos/cardPage';
-import { getStackLineChart, stackLineChartOptions } from 'demos/chartjs';
+import { bgCards, gradientCards, overlayCards } from 'components/demos/cardPage';
+import { getStackLineChart, stackLineChartOptions } from 'components/demos/chartjs';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import {

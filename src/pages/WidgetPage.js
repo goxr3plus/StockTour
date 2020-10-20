@@ -5,7 +5,7 @@ import { Row, Col } from 'reactstrap';
 import Page from 'components/Page';
 import { NumberWidget, IconWidget } from 'components/Widget';
 
-import { iconWidgetsData, numberWidgetsData } from 'demos/widgetPage';
+import { iconWidgetsData, numberWidgetsData } from 'components/demos/widgetPage';
 
 const WidgetPage = () => {
   return (
