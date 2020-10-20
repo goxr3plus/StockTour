@@ -1,17 +1,33 @@
 import Page from 'components/Page';
 import { NumberWidget } from 'components/Widget';
-import { chartjs } from 'demos/dashboardPage';
 import React from 'react';
-import { Bar, Line } from 'react-chartjs-2';
-import { MdBubbleChart, MdInsertChart, MdPieChart, MdShowChart } from 'react-icons/md';
-import { Badge, Card, CardBody, CardHeader, Col, ListGroup, ListGroupItem, Row } from 'reactstrap';
+import { Line } from 'react-chartjs-2';
+import { Card, CardBody, CardHeader, Col, Row } from 'reactstrap';
 import { getColor } from 'utils/colors';
 
 
 class DashboardPage extends React.Component {
-  render() {
-    const primaryColor = getColor('primary');
+  genLineData = (moreData = {}) => {
+    const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
+    return {
+      labels: MONTHS,
+      datasets: [
+        {
+          label: 'NIO Progress over 12 months',
+          backgroundColor: getColor('secondary'),
+          borderColor: getColor('primary'),
+          borderWidth: 1,
+          data: [
+            1, 2, 7, 12, 16, 20, 28,
+          ],
+          ...moreData,
+        },
+      ],
+    };
+  };
+
+  render() {
     return (
       <Page
         className="DashboardPage"
@@ -65,43 +81,14 @@ class DashboardPage extends React.Component {
         <Row>
           <Col lg="8" md="12" sm="12" xs="12">
             <Card>
-              <CardHeader>
-                Total Revenue{' '}
-                <small className="text-muted text-capitalize">This year</small>
-              </CardHeader>
+              <CardHeader>NIO Stock chart</CardHeader>
               <CardBody>
-                <Line data={chartjs.line.data} options={chartjs.line.options} />
+                <Line data={this.genLineData({ fill: false })} />
               </CardBody>
-            </Card>
-          </Col>
-
-          <Col lg="4" md="12" sm="12" xs="12">
-            <Card>
-              <CardHeader>Total Expense</CardHeader>
-              <CardBody>
-                <Bar data={chartjs.bar.data} options={chartjs.bar.options} />
-              </CardBody>
-              <ListGroup flush>
-                <ListGroupItem>
-                  <MdInsertChart size={25} color={primaryColor} /> Cost of sales{' '}
-                  <Badge color="secondary">$3000</Badge>
-                </ListGroupItem>
-                <ListGroupItem>
-                  <MdBubbleChart size={25} color={primaryColor} /> Management
-                  costs <Badge color="secondary">$1200</Badge>
-                </ListGroupItem>
-                <ListGroupItem>
-                  <MdShowChart size={25} color={primaryColor} /> Financial costs{' '}
-                  <Badge color="secondary">$800</Badge>
-                </ListGroupItem>
-                <ListGroupItem>
-                  <MdPieChart size={25} color={primaryColor} /> Other operating
-                  costs <Badge color="secondary">$2400</Badge>
-                </ListGroupItem>
-              </ListGroup>
             </Card>
           </Col>
         </Row>
+
 
       </Page>
     );
