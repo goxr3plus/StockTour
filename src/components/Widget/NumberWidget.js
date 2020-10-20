@@ -4,14 +4,7 @@ import PropTypes from 'utils/propTypes';
 import { Card, CardText, CardTitle, Progress } from 'reactstrap';
 import Typography from '../Typography';
 
-const NumberWidget = ({
-  title,
-  subtitle,
-  number,
-  color,
-  progress: { value, label },
-  ...restProps
-}) => {
+const NumberWidget = ({ title, subtitle, number, color, progress: { value, label }, ...restProps }) => {
   return (
     <Card body {...restProps}>
       <div className="d-flex justify-content-between">
@@ -23,15 +16,18 @@ const NumberWidget = ({
         </CardText>
         <CardTitle className={`text-${color}`}>{number}</CardTitle>
       </div>
-      <Progress value={value} color={color} style={{ height: '8px' }} />
-      <CardText tag="div" className="d-flex justify-content-between">
-        <Typography tag="span" className="text-left text-muted small">
-          {label}
-        </Typography>
-        <Typography tag="span" className="text-right text-muted small">
-          {value}%
-        </Typography>
-      </CardText>
+      {value ? <>
+        <Progress value={value} color={color} style={{ height: '8px' }} />
+        <CardText tag="div" className="d-flex justify-content-between">
+          <Typography tag="span" className="text-left text-muted small">
+            {label}
+          </Typography>
+          <Typography tag="span" className="text-right text-muted small">
+            {value}%
+          </Typography>
+        </CardText>
+      </> : null
+      }
     </Card>
   );
 };

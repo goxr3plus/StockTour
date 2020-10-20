@@ -29,17 +29,17 @@ const Page = ({
         ) : (
             title
           )}
-        {breadcrumbs && (
-          <Breadcrumb className={bem.e('breadcrumb')}>
-            <BreadcrumbItem>Home</BreadcrumbItem>
-            {breadcrumbs.length &&
-              breadcrumbs.map(({ name, active }, index) => (
-                <BreadcrumbItem key={index} active={active}>
-                  {name}
-                </BreadcrumbItem>
-              ))}
-          </Breadcrumb>
-        )}
+        {/*{breadcrumbs && (*/}
+        {/*  <Breadcrumb className={bem.e('breadcrumb')}>*/}
+        {/*    <BreadcrumbItem>Home</BreadcrumbItem>*/}
+        {/*    {breadcrumbs.length &&*/}
+        {/*      breadcrumbs.map(({ name, active }, index) => (*/}
+        {/*        <BreadcrumbItem key={index} active={active}>*/}
+        {/*          {name}*/}
+        {/*        </BreadcrumbItem>*/}
+        {/*      ))}*/}
+        {/*  </Breadcrumb>*/}
+        {/*)}*/}
       </div>
       {children}
     </Tag>
