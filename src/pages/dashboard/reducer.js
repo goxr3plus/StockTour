@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
   const data = action.data;
   switch (action.type) {
     case ActionTypes.DASHBOARD_UPDATE_STORE:
-      return [...state, action.data];
+      return { ...state, ...data };
     default:
       return state;
   }
