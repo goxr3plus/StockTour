@@ -6,6 +6,7 @@ import { Col, Row } from 'reactstrap';
 import { UserCard } from '../../components/Card';
 import { AdvancedTable } from '../../components/index';
 import StockTableMeta from './StockTableMeta';
+import { getStockData } from './actions';
 
 const DashboardPage = () => {
 
@@ -15,8 +16,7 @@ const DashboardPage = () => {
 
   /* This is the same as component did mount */
   useEffect(() => {
-    // console.log('hello');
-    // dispatch(getStockData());
+    dispatch(getStockData());
   }, []);
 
   //--------------------------------- ACTIONS ---------------------------------------- //

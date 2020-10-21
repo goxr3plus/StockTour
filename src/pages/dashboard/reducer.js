@@ -36,6 +36,9 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.DASHBOARD_UPDATE_STORE:
       return { ...state, ...data };
+    case ActionTypes.UPDATE_STOCKS_TABLE:
+      const tableData = data.data;
+      return { ...state, table: { ...table, data: tableData, totalDataSize: tableData.length } };
     default:
       return state;
   }

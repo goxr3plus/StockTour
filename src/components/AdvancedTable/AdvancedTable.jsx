@@ -163,27 +163,27 @@ export default class AdvancedTable extends Component {
           translations={translations}
           tableFooter={tableFooter}
         />
-        {showPagination ? (
-          <AdvancedPagination
-            translations={translations}
-            page={paginationPage}
-            limit={paginationLimit}
-            totalDataSize={table.totalDataSize}
-            paginationCol={paginationCol}
-            onPageChange={_.isFunction(onPageChange) ? onPageChange : this.onPageChange}
-            onLimitChange={_.isFunction(onLimitChange) ? onLimitChange : this.onLimitChange}
-            limitOptions={limitOptions}
-            /* Pagination Styling */
-            globalAdvancedPaginatorStyle={globalAdvancedPaginatorStyle}
-            paginationStyle={paginationStyle}
-            jumpToPageStyle={jumpToPageStyle}
-            filterLimitStyle={filterLimitStyle}
-            /* Pagination Classes */
-            paginationClass={paginationClass}
-            jumpToPageClass={jumpToPageClass}
-            filterLimitClass={filterLimitClass}
-          ></AdvancedPagination>
-        ) : null}
+        {/*{showPagination ? (*/}
+        {/*  <AdvancedPagination*/}
+        {/*    translations={translations}*/}
+        {/*    page={paginationPage}*/}
+        {/*    limit={paginationLimit}*/}
+        {/*    totalDataSize={table.totalDataSize}*/}
+        {/*    paginationCol={paginationCol}*/}
+        {/*    onPageChange={_.isFunction(onPageChange) ? onPageChange : this.onPageChange}*/}
+        {/*    onLimitChange={_.isFunction(onLimitChange) ? onLimitChange : this.onLimitChange}*/}
+        {/*    limitOptions={limitOptions}*/}
+        {/*    /// Pagination Styling*/}
+        {/*    globalAdvancedPaginatorStyle={globalAdvancedPaginatorStyle}*/}
+        {/*    paginationStyle={paginationStyle}*/}
+        {/*    jumpToPageStyle={jumpToPageStyle}*/}
+        {/*    filterLimitStyle={filterLimitStyle}*/}
+        {/*    // Pagination Classes*/}
+        {/*    paginationClass={paginationClass}*/}
+        {/*    jumpToPageClass={jumpToPageClass}*/}
+        {/*    filterLimitClass={filterLimitClass}*/}
+        {/*  />*/}
+        {/*) : null}*/}
       </div>
     );
   }

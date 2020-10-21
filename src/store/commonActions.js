@@ -1,4 +1,4 @@
-// import { errorHandling } from '../lib/ui/toastrHandler';
+import { errorHandling } from '../utils/toasterHandler';
 
 /**  Handle unexpected error inside action handler method and dispatch single redux action
  *
@@ -7,7 +7,7 @@
  */
 export const handleError = (error, actionType, data, dispatch) => {
   if (dispatch && actionType && data) dispatchAction(actionType, data, dispatch);
-  // errorHandling(error);
+  errorHandling(error);
 };
 
 /** Dispatch single redux action
