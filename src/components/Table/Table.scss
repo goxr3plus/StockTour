@@ -1,0 +1,27 @@
+.data-table {
+  th {
+    border: 1px solid rgba(55, 55, 55, 0.1);
+    padding: 10px !important;
+    text-align: left;
+    background-color: #258cd1;
+    color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover {
+    background-color: #ddd;
+  }
+
+  td {
+    border: 1px solid rgba(55, 55, 55, 0.1);
+    padding: 8px;
+    vertical-align: middle !important;
+  }
+
+  .expanded-row:hover {
+    background-color: #f2f2f2 !important;
+  }
+}

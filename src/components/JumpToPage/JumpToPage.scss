@@ -1,0 +1,19 @@
+.jumpToPage {
+  width: 100%;
+
+  label {
+    float: left;
+    line-height: 2.5em;
+  }
+
+  span {
+    display: block;
+    overflow: hidden;
+    padding-right: 1em;
+  }
+
+  input {
+    margin-left: 10px;
+    width: 100% !important;
+  }
+}

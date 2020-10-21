@@ -22,6 +22,7 @@
     "react-icons": "^3.11.0",
     "react-infinite-calendar": "^2.3.1",
     "react-notification-system": "^0.4.0",
+    "react-paginate": "^6.5.0",
     "react-redux": "^7.2.1",
     "react-redux-toastr": "^7.6.5",
     "react-router": "^5.2.0",
@@ -31,6 +32,7 @@
     "reactstrap": "^7.1.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
+    "uuid": "^8.3.1",
     "victory": "^35.3.0"
   },
   "devDependencies": {
