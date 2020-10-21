@@ -16,17 +16,12 @@ const createMockData = (id, stock, buyPrice, profit) => {
 
 export const getStockData = () => async (dispatch) => {
   try {
-    console.log('Getting Stock Data');
-
-    // await sleep(1500);
-
     /* Get Remote data */
     // const alpha = require('alphavantage')({ key: 'BYEXYBRG4D1OVIC2' });
     // const nioPrice = await alpha.data.intraday(`nio`);
 
     // const data = await axios.get('https://finance.yahoo.com/quote/%5EIXIC?p=^IXIC');
     //  console.log(data.data);
-
 
     dispatchAction(UPDATE_STOCKS_TABLE, {
       data: [

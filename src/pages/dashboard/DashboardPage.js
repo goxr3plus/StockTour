@@ -7,6 +7,7 @@ import { UserCard } from '../../components/Card';
 import { AdvancedTable } from '../../components/index';
 import StockTableMeta from './StockTableMeta';
 import { getStockData } from './actions';
+import { FaEdit, FaWindowClose } from 'react-icons/fa';
 
 const DashboardPage = () => {
 
@@ -33,8 +34,8 @@ const DashboardPage = () => {
             onPageChange={onPageChange}
             onLimitChange={onLimitChange}
             onSortChange={onSortChange}
-            // renderRowActions={this.renderRowActions}
-            // renderExpandedRow={this.renderExpandedRow}
+            renderRowActions={renderRowActions}
+            // renderExpandedRow={renderExpandedRow}
             // expandCollapse={expandCollapse}
             renderHeader={renderHeader}
             renderColumn={renderColumn}
@@ -59,7 +60,13 @@ const DashboardPage = () => {
   };
 
   const renderRowActions = (record) => {
-    return <Row></Row>;
+    return (
+      <Row style={{ margin: '0px', padding: '0px' }}>
+        <Col xs={6} style={{ margin: '0px', padding: '0px', cursor: 'pointer' }}><FaEdit size="25px" /></Col>
+        <Col xs={6} style={{ margin: '0px', padding: '0px', cursor: 'pointer' }}><FaWindowClose size="25px"
+                                                                                                color="firebrick" /></Col>
+      </Row>
+    );
   };
 
   const renderExpandedRow = (rowItem) => {

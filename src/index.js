@@ -5,6 +5,7 @@ import { store } from 'store/store';
 import { Provider } from 'react-redux';
 import ReduxToastr from 'react-redux-toastr';
 import { BrowserRouter } from 'react-router-dom';
+import './assets/styles/app.scss';
 
 const getBasename = () => {
   return `/${process.env.PUBLIC_URL.split('/').pop()}`;
@@ -19,5 +20,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root'),
 );
-
-//stock api key = BYEXYBRG4D1OVIC2

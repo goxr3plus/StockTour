@@ -17,6 +17,7 @@ const tableFilter = {
     showPagination: true,
     showSort: true,
     // expandable: true
+    showActions: true,
   },
 };
 

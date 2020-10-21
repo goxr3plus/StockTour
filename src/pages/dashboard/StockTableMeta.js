@@ -36,6 +36,12 @@ const StockTableMeta = {
       translation: 'rsProfit',
       ...columnStyle,
     },
+    // {
+    //   name: 'Actions',
+    //   id: 'actions',
+    //   translation: 'rsActions',
+    //   ...columnStyle,
+    // },
 
   ],
 };
