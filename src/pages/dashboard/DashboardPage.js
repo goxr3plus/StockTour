@@ -4,11 +4,13 @@ import Page from 'components/Page';
 import { NumberWidget } from 'components/Widget';
 import { Col, Row } from 'reactstrap';
 import { UserCard } from '../../components/Card';
+import { AdvancedTable } from '../../components/index';
+import StockTableMeta from './StockTableMeta';
 
 const DashboardPage = () => {
 
   const dispatch = useDispatch();
-  const { nio } = useSelector((state) => state['dashBoard']);
+  const { nio, table, expandCollapse, tableFilters } = useSelector((state) => state['dashBoard']);
 
 
   /* This is the same as component did mount */
@@ -19,8 +21,62 @@ const DashboardPage = () => {
 
   //--------------------------------- ACTIONS ---------------------------------------- //
 
+  // -------------------------- TABLE --------------------------------------
+
+  const getTable = (table) => {
+    return (
+      <Row style={{ marginBottom: '10px' }}>
+        <Col md={12}>
+          <AdvancedTable
+            meta={StockTableMeta}
+            table={table}
+            onPageChange={onPageChange}
+            onLimitChange={onLimitChange}
+            onSortChange={onSortChange}
+            // renderRowActions={this.renderRowActions}
+            // renderExpandedRow={this.renderExpandedRow}
+            // expandCollapse={expandCollapse}
+            renderHeader={renderHeader}
+            renderColumn={renderColumn}
+            filterLimitStyle={{ marginTop: '2px' }}
+            {...tableFilters}
+          />
+        </Col>
+      </Row>
+    );
+  };
+
+  const fetchTableData = () => {
+  };
+
+  const onPageChange = async (paginationPage) => {
+  };
+
+  const onLimitChange = async (paginationLimit) => {
+  };
+
+  const onSortChange = async (newSort) => {
+  };
+
+  const renderRowActions = (record) => {
+    return <Row></Row>;
+  };
+
+  const renderExpandedRow = (rowItem) => {
+    return <Row></Row>;
+  };
+
+  const renderHeader = (column) => {
+  };
+
+  const renderColumn = (record, column) => {
+  };
+
 
   //--------------------------------- GETTERS ---------------------------------------- //
+
+
+  // -------------------------- RENDER ---------------------------------------
 
 
   return (
@@ -76,6 +132,11 @@ const DashboardPage = () => {
             number="5$"
             color="primary"
           />
+        </Col>
+      </Row>
+      <Row style={{ marginTop: '10px' }}>
+        <Col xs={12} md={12}>
+          {getTable(table)}
         </Col>
       </Row>
     </Page>

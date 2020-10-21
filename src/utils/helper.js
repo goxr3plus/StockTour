@@ -1,5 +1,5 @@
 const translate = (a, b) => {
-  return 'a';
+  return b;
 };
 
 const sleep = (ms) => {
