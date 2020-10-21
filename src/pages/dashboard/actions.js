@@ -12,8 +12,7 @@ export const UPDATE_BOUGHT_STOCKS_TABLE = 'UPDATE_BOUGHT_STOCKS_TABLE';
 
 const createMockData = (id, symbol, boughtPrice, amount) => ({ id, symbol, boughtPrice, amount });
 
-const randomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
+const randomNumber = (min, max) => (Math.random() * (max - min) + min).toFixed(2);
 
 export const getStockData = () => async (dispatch, getState) => {
     try {
@@ -26,10 +25,11 @@ export const getStockData = () => async (dispatch, getState) => {
 
       dispatchAction(UPDATE_BOUGHT_STOCKS_TABLE, {
         data: [
-          createMockData(1, 'NIO', 23.70, 40),
-          createMockData(2, 'MGI', 4.50, 400),
-          createMockData(3, 'TSLA', 432, 12),
-          createMockData(4, 'SPCE', 21.70, 7),
+          createMockData(1, 'NIO', 27.50, 120),
+          createMockData(2, 'SPCE', 21.70, 7),
+          // createMockData(3, 'MGI', 5, 400),
+          // createMockData(4, 'TSLA', 425, 4),
+
         ],
 
       }, dispatch);
@@ -38,10 +38,10 @@ export const getStockData = () => async (dispatch, getState) => {
         await sleep(1500);
         dispatchAction(DASHBOARD_UPDATE_STORE, {
           stocks: [
-            { symbol: 'NIO', description: 'NIO Holdings', livePrice: randomNumber(20, 30) },
-            { symbol: 'SPCE', description: 'Virgin Galactic', livePrice: randomNumber(20, 24) },
-            { symbol: 'TSLA', description: 'Tesla', livePrice: randomNumber(400, 432) },
-            { symbol: 'MGI', description: 'MoneyGram', livePrice: randomNumber(1, 5) },
+            { symbol: 'NIO', description: 'NIO Holdings', livePrice: randomNumber(27.20, 28.40) },
+            { symbol: 'SPCE', description: 'Virgin Galactic', livePrice: randomNumber(22, 23) },
+            { symbol: 'MGI', description: 'MoneyGram', livePrice: randomNumber(4.8, 5.50) },
+            { symbol: 'TSLA', description: 'Tesla', livePrice: randomNumber(417, 432) },
           ],
         }, dispatch);
       }
