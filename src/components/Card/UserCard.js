@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'utils/propTypes';
-
 import classNames from 'classnames';
-
 import { Card, CardBody, CardSubtitle, CardText, CardTitle } from 'reactstrap';
-
 import Avatar from '../Avatar';
+import FlipNumbers from 'react-flip-numbers';
 
 const UserCard = ({ avatar, avatarSize, title, subtitle, text, children, className, ...restProps }) => {
   const classes = classNames('bg-gradient-theme', className);
@@ -17,7 +15,11 @@ const UserCard = ({ avatar, avatarSize, title, subtitle, text, children, classNa
         <CardTitle>{title}</CardTitle>
         <CardSubtitle>{subtitle}</CardSubtitle>
         <CardText>
-          <small>{text}</small>
+          <strong><FlipNumbers height={20} width={15} color="white"
+                               background="black" play
+                               perspective={1000}
+                               numbers={text} />
+          </strong>
         </CardText>
       </CardBody>
       {children}

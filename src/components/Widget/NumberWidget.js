@@ -3,6 +3,7 @@ import PropTypes from 'utils/propTypes';
 
 import { Card, CardText, CardTitle, Progress } from 'reactstrap';
 import Typography from '../Typography';
+import FlipNumbers from 'react-flip-numbers';
 
 const NumberWidget = ({ title, subtitle, number, color, progress: { value, label }, ...restProps }) => {
   return (
@@ -14,7 +15,11 @@ const NumberWidget = ({ title, subtitle, number, color, progress: { value, label
           </Typography>
           <Typography className="mb-0 text-muted small">{subtitle}</Typography>
         </CardText>
-        <CardTitle className={`text-${color}`}>{number}</CardTitle>
+        <CardTitle className={`text-${color}`}><strong><FlipNumbers height={20} width={15} color="black"
+                                                                    background="white" play
+                                                                    perspective={1000}
+                                                                    numbers={number} /></strong>
+        </CardTitle>
       </div>
       {value ? <>
         <Progress value={value} color={color} style={{ height: '8px' }} />

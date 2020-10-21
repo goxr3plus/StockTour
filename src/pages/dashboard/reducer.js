@@ -22,7 +22,13 @@ const tableFilter = {
 };
 
 const initialState = {
-  nio: '15',
+  portfolio: '3325',
+  stocks: [
+    { symbol: 'Nio', description: 'NIO Holdings', livePrice: '30' },
+    { symbol: 'SPCE', description: 'Virgin Galactic', livePrice: '24' },
+    { symbol: 'TSLA', description: 'Tesla', livePrice: '457' },
+    { symbol: 'MGI', description: 'MoneyGram', livePrice: '5' },
+  ],
 
   //---- Table ----
   ...table,
@@ -37,7 +43,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.DASHBOARD_UPDATE_STORE:
       return { ...state, ...data };
-    case ActionTypes.UPDATE_STOCKS_TABLE:
+    case ActionTypes.UPDATE_BOUGHT_STOCKS_TABLE:
       const tableData = data.data;
       return { ...state, table: { ...table, data: tableData, totalDataSize: tableData.length } };
     default:
