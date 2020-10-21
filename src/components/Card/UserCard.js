@@ -13,13 +13,13 @@ const UserCard = ({ avatar, avatarSize, title, subtitle, text, children, classNa
       <CardBody className="d-flex justify-content-center align-items-center flex-column">
         {avatar && <Avatar src={avatar} size={avatarSize} className="mb-2" />}
         <CardTitle>{title}</CardTitle>
-        <CardSubtitle>{subtitle}</CardSubtitle>
+        <CardSubtitle><strong><FlipNumbers height={20} width={15} color="white"
+                                           background="transparent" play
+                                           perspective={1000}
+                                           numbers={subtitle} />
+        </strong></CardSubtitle>
         <CardText>
-          <strong><FlipNumbers height={20} width={15} color="white"
-                               background="black" play
-                               perspective={1000}
-                               numbers={text} />
-          </strong>
+          <small>{text}</small>
         </CardText>
       </CardBody>
       {children}

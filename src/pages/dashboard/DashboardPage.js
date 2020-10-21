@@ -9,11 +9,12 @@ import StockTableMeta from './StockTableMeta';
 import { getStockData } from './actions';
 import { FaEdit, FaWindowClose } from 'react-icons/fa';
 import FlipNumbers from 'react-flip-numbers';
+import { convertToCurrency } from '../../utils/helper';
 
 const DashboardPage = () => {
 
   const dispatch = useDispatch();
-  const { stocks, portfolio, table, expandCollapse, tableFilters, flipNumber } = useSelector((state) => state['dashBoard']);
+  const { stocks, portfolio, table, expandCollapse, tableFilters } = useSelector((state) => state['dashBoard']);
 
 
   /* This is the same as component did mount */
@@ -79,45 +80,52 @@ const DashboardPage = () => {
 
   const renderColumn = (record, column) => {
     if (column.id == 'boughtPrice') {
-      return convertToMoney(record.boughtPrice);
+      return convertToCurrency(record.boughtPrice);
+
     } else if (column.id == 'invested') {
-      return convertToMoney(record.boughtPrice * record.amount);
+      return convertToCurrency(record.boughtPrice * record.amount);
+
     } else if (column.id == 'profit') {
-      const stockLivePrice = getStockPrice('NIO');
-      const profit = convertToMoney(stockLivePrice - record.boughtPrice);
-      return <strong><FlipNumbers height={20} width={15} color="white"
-                                  background="black" play
-                                  perspective={1000}
-                                  numbers={profit} /></strong>;
-    } else if (column.id == 'profitPercent') {
-      const stockLivePrice = getStockPrice('NIO');
-      return '+2%';
+      const stockLivePrice = getStockPrice(record.symbol);
+      const moneyNow = stockLivePrice * record.amount;
+      const moneyBefore = record.boughtPrice * record.amount;
+      const profit = moneyNow - moneyBefore;
+      return <strong style={{ color: profit > 0 ? 'green' : 'firebrick' }}>{convertToCurrency(profit)}</strong>;
+
+      // } else if (column.id == 'profitPercent') {
+      //   const stockLivePrice = getStockPrice('NIO');
+      //   const moneyNow = stockLivePrice * record.amount;
+      //   const moneyBefore = record.boughtPrice * record.amount;
+      //   const profitPercent = moneyNow * 100 / moneyBefore - 100;
+      //
+      //   return profitPercent.toFixed(2) + '%';
+
+    } else if (column.id == 'moneyNow') {
+      const stockLivePrice = getStockPrice(record.symbol);
+      const moneyNow = stockLivePrice * record.amount;
+      const moneyBefore = record.boughtPrice * record.amount;
+      const profit = moneyNow - moneyBefore;
+      return <strong style={{ color: profit > 0 ? 'green' : 'firebrick' }}>{convertToCurrency(moneyNow)}</strong>;
     }
 
 
-  };
-
-  const getStockPrice = (symbol) => {
-    return stocks[0].livePrice;
   };
 
 
   //--------------------------------- GETTERS ---------------------------------------- //
 
-
-  // -------------------------- RENDER ---------------------------------------
-
-  const convertToMoney = (money, locale) => {
-    try {
-      return new Intl.NumberFormat(locale ? locale : 'de-DE', {
-        style: 'currency',
-        currency: 'USD',
-      }).format(money);
-    } catch (error) {
-      console.log(error);
-      return money;
-    }
+  const getStockPrice = (symbol) => {
+    const results = stocks.filter(stock => stock.symbol == symbol);
+    if (results.length == 0) {
+      return 0;
+    } else return results[0].livePrice;
   };
+
+  const getPortfolioProfit = () => {
+
+    return convertToCurrency(50);
+  };
+  // -------------------------- RENDER ---------------------------------------
 
   return (
     <Page
@@ -129,7 +137,8 @@ const DashboardPage = () => {
         <Col md={12}>
           <UserCard
             title="Alex PORTFOLIO"
-            text={convertToMoney(portfolio)}
+            subtitle={convertToCurrency(portfolio)}
+            text={50}
             style={{
               height: 120,
             }}
@@ -137,8 +146,8 @@ const DashboardPage = () => {
         </Col>
       </Row>
       <Row>
-        {stocks.map(stock =>
-          <Col lg={3} md={6} sm={6} xs={12}>
+        {stocks.map((stock, index) =>
+          <Col lg={3} md={6} sm={6} xs={12} key={`Stock_${index}`}>
             <NumberWidget
               title={stock.symbol}
               subtitle={stock.description}

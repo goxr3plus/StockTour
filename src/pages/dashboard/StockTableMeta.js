@@ -38,9 +38,16 @@ const StockTableMeta = {
       ...columnStyle,
     },
     {
-      name: 'Money Spend',
+      name: 'Money Invested',
       id: 'invested',
       translation: 'rsMoneySpend',
+      ...columnStyle,
+      isCustomColumn: true,
+    },
+    {
+      name: 'Money Now',
+      id: 'moneyNow',
+      translation: 'rsMoneyNow',
       ...columnStyle,
       isCustomColumn: true,
     },
@@ -51,13 +58,6 @@ const StockTableMeta = {
       ...columnStyle,
       isCustomColumn: true,
       tableColumnStyle: { textAlign: 'right' },
-    },
-    {
-      name: 'Profit %',
-      id: 'profitPercent',
-      translation: 'rsProfitPercent',
-      ...columnStyle,
-      isCustomColumn: true,
     },
   ],
 };
